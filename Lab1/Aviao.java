@@ -1,20 +1,22 @@
 class Aviao {
 private String modelo;
 private String identificador;
-private Boolean motor;
 private float altura;
 private float velocidade;
 private Boolean emVoo;
+private Motor motorEsquerdo;
+private Motor motorDireito;
 
-Aviao(String novoM, String novoId){
+Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setModelo(novoM);
     this.setIdentificador(novoId);
-    this.setMotor(false);
     this.setAltura(0.0f);
     this.setVelocidade(0.0f);
-    this.setVoo(false);}
+    this.setVoo(false);
+    motorEsquerdo.set(motor2);
+    this.motorEsquerdo(motor1);}
 
-public void imprimaok(){
+public void imprimaOk(){
     System.out.println("Ok");
 }    
 public Boolean getVoo(){
@@ -51,12 +53,7 @@ public String getIdentificador(){
 public void setIdentificador(String novoValor ){
     this.identificador=novoValor;
 }
-public Boolean getMotor(){
-    return this.motor;
-}
-public void setMotor(boolean novoValor){
-this.motor=novoValor;
-}
+
 public float getAltura(){
     return this.altura;
 }
@@ -70,21 +67,44 @@ public void setVelocidade(float novoValor){
     this.velocidade=novoValor;
 }
 public void ligarMotor(){
-    setMotor(true);
-    System.out.println("Vruuuuuuuummmmmmmmmmm");
-}
-public void desligaMotor(){
-    setMotor(false);
-    System.out.println("mmmmmmmmmmuuuuuuurrV");
-}
+    if(motorDireito.getAtivo()){
+        if(motorEsquerdo.getAtivo()){
+        System.out.println("Todos os motores já estavam ligados"); }
+        else{motorEsquerdo.ligar();}}
+    else{
+        motorDireito.ligar();
+        if(!motorEsquerdo.getAtivo()){motorEsquerdo.ligar();}
+        }
+        System.out.println("Vruuuuuuuummmmmmmmmmm");}
+
+public void desligarMotor(){
+    if(!motorDireito.getAtivo()){
+        if(!motorEsquerdo.getAtivo()){
+        System.out.println("Todos os motores já estavam desligados"); }
+        else{motorEsquerdo.desligar();}}
+    else{
+        motorDireito.desligar();
+        if(motorEsquerdo.getAtivo()){motorEsquerdo.desligar();}
+        }
+        System.out.println("mmmmm.....");}
+
 public void imprimeEstadoMotor(){
-    if(this.getMotor()){
+    if(motorEsquerdo.getAtivo()||motorDireito.getAtivo()){
         System.out.println("O motor está ligado");
     }
     else{
         System.out.println("O motor está desligado");
     }
 }
+public boolean getEstadoMotor(){
+    if(motorEsquerdo.getAtivo()||motorDireito.getAtivo()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 public void acelerar(){
  if(this.getMotor()){
     this.velocidade=this.velocidade+50;
