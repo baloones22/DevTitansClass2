@@ -8,7 +8,7 @@ class Main {
         cavaloLaranja= new Motor("orange dragon",(float) 50.0);
         cavaloRed= new Motor("red dragon",(float) 50.0);
         Aviao vacaloLaranja;
-        vacaloLaranja= new Aviao("blue Dragon","frankstein");
+        vacaloLaranja= new Aviao("blue Dragon","frankstein",cavaloRed,cavaloLaranja);
         vacaloLaranja.imprimaOk();
         
 

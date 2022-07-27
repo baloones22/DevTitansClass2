@@ -13,9 +13,11 @@ Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setAltura(0.0f);
     this.setVelocidade(0.0f);
     this.setVoo(false);
-    motorEsquerdo.set(motor2);
-    this.motorEsquerdo(motor1);}
+    this.setMotores(motor1,motor2);}
 
+private void setMotores(Motor novoMotor1,Motor novoMotor2){
+    this.motorDireito=novoMotor1;
+    this.motorEsquerdo=novoMotor2;}
 public void imprimaOk(){
     System.out.println("Ok");
 }    

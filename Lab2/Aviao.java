@@ -8,7 +8,7 @@ class Aviao{
 	private float velocidade;
 	
 	
-	Aviao(String novoM, String novoId){
+	Aviao(String novoM, String novoId, Motor cavaloRed, Motor cavaloLaranja){
 		this.setModelo(novoM);
 		this.setIdentificador(novoId);
 		this.setMotor(false);
