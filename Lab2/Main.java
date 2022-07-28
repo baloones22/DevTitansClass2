@@ -14,38 +14,39 @@ class Main {
 
         System.out.println("Model:"+vacaloLaranja.getModelo()+"\nID:"+vacaloLaranja.getIdentificador()+
                             "\nStatus:"+vacaloLaranja.getEstadoMotor()+"\nAltura:"+vacaloLaranja.getAltura());        ;
-        vacaloLaranja.ligarMotor();        
+        vacaloLaranja.ligarMotor(cavaloLaranja);        
         vacaloLaranja.imprimeEstadoMotor();
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligarMotor(cavaloRed);
         vacaloLaranja.imprimeEstadoMotor();
-        vacaloLaranja.ligarMotor();
+        vacaloLaranja.ligarMotor(cavaloRed);
         vacaloLaranja.acelerar();
         vacaloLaranja.acelerar(); 
-        vacaloLaranja.desligarMotor(); 
+        vacaloLaranja.desligarMotor(cavaloLaranja); 
         vacaloLaranja.acelerar();  
 
-        vacaloLaranja.ligarMotor();
+        vacaloLaranja.ligarMotor(cavaloLaranja);
         vacaloLaranja.desacelerar(); 
         vacaloLaranja.desacelerar(); 
         vacaloLaranja.desacelerar(); 
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligarMotor(cavaloRed);
         vacaloLaranja.desacelerar(); 
         
 
-        vacaloLaranja.ligarMotor();
+        vacaloLaranja.ligarMotor(cavaloLaranja);
         vacaloLaranja.acelerar(); 
         vacaloLaranja.acelerar(); 
         vacaloLaranja.acelerar();
         vacaloLaranja.acelerar(); 
         vacaloLaranja.acelerar(); 
-        
+        vacaloLaranja.desligarMotor(cavaloRed);
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
+        vacaloLaranja.desligarMotor(cavaloLaranja);
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligarMotor(cavaloRed);
     }
     
 }

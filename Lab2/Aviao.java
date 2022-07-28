@@ -68,27 +68,22 @@ public float getVelocidade(){
 public void setVelocidade(float novoValor){
     this.velocidade=novoValor;
 }
-public void ligarMotor(){
-    if(motorDireito.getAtivo()){
-        if(motorEsquerdo.getAtivo()){
-        System.out.println("Todos os motores já estavam ligados"); }
-        else{motorEsquerdo.ligar();}}
+public void ligarMotor(Motor motorzinho){
+    if(!motorzinho.getAtivo()){
+        motorzinho.ligar();
+        System.out.println("Vrummm no motor :"+motorzinho.getModelo());}
     else{
-        motorDireito.ligar();
-        if(!motorEsquerdo.getAtivo()){motorEsquerdo.ligar();}
+        System.out.println("Motor já estava ligado");}
         }
-        System.out.println("Vruuuuuuuummmmmmmmmmm");}
 
-public void desligarMotor(){
-    if(!motorDireito.getAtivo()){
-        if(!motorEsquerdo.getAtivo()){
-        System.out.println("Todos os motores já estavam desligados"); }
-        else{motorEsquerdo.desligar();}}
-    else{
-        motorDireito.desligar();
-        if(motorEsquerdo.getAtivo()){motorEsquerdo.desligar();}
-        }
-        System.out.println("mmmmm.....");}
+public void desligarMotor(Motor motorzinho){
+    if(motorzinho.getAtivo()){
+    motorzinho.desligar();
+    System.out.println("mmuurrV no motor :"+motorzinho.getModelo());}
+else{
+    System.out.println("Motor já estava desligado");}
+    }
+
 
 public void imprimeEstadoMotor(){
     if(motorEsquerdo.getAtivo()||motorDireito.getAtivo()){
