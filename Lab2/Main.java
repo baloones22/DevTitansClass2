@@ -13,7 +13,7 @@ class Main {
         
 
         System.out.println("Model:"+vacaloLaranja.getModelo()+"\nID:"+vacaloLaranja.getIdentificador()+
-                            "\nStatus:"+vacaloLaranja.getMotor()+"\nAltura:"+vacaloLaranja.getAltura());        ;
+                            "\nStatus:"+vacaloLaranja.getEstadoMotor()+"\nAltura:"+vacaloLaranja.getAltura());        ;
         vacaloLaranja.ligarMotor();        
         vacaloLaranja.imprimeEstadoMotor();
         vacaloLaranja.desligarMotor();

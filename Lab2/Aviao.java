@@ -108,30 +108,33 @@ public boolean getEstadoMotor(){
 }
 
 public void acelerar(){
- if(this.getMotor()){
+ if(motorEsquerdo.getAtivo()){
     this.velocidade=this.velocidade+50;
+    if(motorDireito.getAtivo()){
+        this.velocidade=this.velocidade+50;}}
+else{
+    if(motorDireito.getAtivo()){
+        this.velocidade=this.velocidade+50;}
+    else{
+        System.out.println("ERRO:MOTORES DESLIGADOS"); }}
     String result ="Aviao a "+this.velocidade+"km/h";
     System.out.println(result);
     this.atualizarStatusVoo();
  }
- else{
-    System.out.println("ERRO:MOTOR DESLIGADO");
- }
-}
-
+ 
 public void desacelerar(){
-    if(this.getMotor()){
-        if(this.velocidade>49){
-       this.velocidade=this.velocidade-50;
-       String result ="Aviao a "+this.velocidade+"km/h";
-       System.out.println(result);}
-       else{
-        this.velocidade=0;
-        String result ="Aviao a "+this.velocidade+"km/h";
-        System.out.println(result);}
-       this.atualizarStatusVoo();}
+    if(motorEsquerdo.getAtivo()&&this.velocidade>=50){
+        this.velocidade=this.velocidade-50;
+        if(motorDireito.getAtivo()&&this.velocidade>=50){
+            this.velocidade=this.velocidade-50;}}
     else{
-       System.out.println("ERRO:MOTOR DESLIGADO");}
-   }
+        if(motorDireito.getAtivo()&&this.velocidade>=50){
+            this.velocidade=this.velocidade-50;}
+        else{
+            System.out.println("ERRO:MOTORES DESLIGADOS"); }}
+        String result ="Aviao a "+this.velocidade+"km/h";
+        System.out.println(result);
+        this.atualizarStatusVoo();
+     }
 }
 
