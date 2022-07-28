@@ -1,61 +1,51 @@
-class Main{
+class Main {
 
-	public static void main(String[] args){
-	
-	     Aviao baraoVermelho;
-	          
-	     baraoVermelho = new Aviao("Fokker DR1","Freiherr");     
-	     baraoVermelho.imprimaOk();
-	     
-	          
-	     System.out.println("Modelo: "+baraoVermelho.getModelo()+
-	     			"\nId: "+baraoVermelho.getIdentificador()+
-	     			"\nStatus Motor: "+baraoVermelho.getMotor()+
-	     			"\nAltura: "+baraoVermelho.getAltura());
-	     			     
-	    baraoVermelho.ligarMotor();
-	    baraoVermelho.imprimeEstadoMotor(); 		
-	    baraoVermelho.desligarMotor();
-	    baraoVermelho.imprimeEstadoMotor();  
-	    
-	    baraoVermelho.ligarMotor();
-	    baraoVermelho.acelerar();
-	    baraoVermelho.acelerar();
-	    baraoVermelho.desligarMotor();
-	    baraoVermelho.acelerar();
-	    
-	    baraoVermelho.ligarMotor();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desligarMotor();
-	    baraoVermelho.desacelerar();
-	    
-	    baraoVermelho.ligarMotor();
-	    baraoVermelho.acelerar();
-	    baraoVermelho.acelerar();	
-	    baraoVermelho.acelerar();
-	    baraoVermelho.acelerar();    
-	    baraoVermelho.acelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();
-	    baraoVermelho.desacelerar();   
-	    	 			
-	}
+    public static void main(String[] args){
+
+
+        Motor cavaloRed;
+        Motor cavaloLaranja;
+        cavaloLaranja= new Motor("orange dragon",(float) 50.0);
+        cavaloRed= new Motor("red dragon",(float) 50.0);
+        Aviao vacaloLaranja;
+        vacaloLaranja= new Aviao("blue Dragon","frankstein",cavaloRed,cavaloLaranja);
+        vacaloLaranja.imprimaOk();
+        
+
+        System.out.println("Model:"+vacaloLaranja.getModelo()+"\nID:"+vacaloLaranja.getIdentificador()+
+                            "\nStatus:"+vacaloLaranja.getMotor()+"\nAltura:"+vacaloLaranja.getAltura());        ;
+        vacaloLaranja.ligarMotor();        
+        vacaloLaranja.imprimeEstadoMotor();
+        vacaloLaranja.desligarMotor();
+        vacaloLaranja.imprimeEstadoMotor();
+        vacaloLaranja.ligarMotor();
+        vacaloLaranja.acelerar();
+        vacaloLaranja.acelerar(); 
+        vacaloLaranja.desligarMotor(); 
+        vacaloLaranja.acelerar();  
+
+        vacaloLaranja.ligarMotor();
+        vacaloLaranja.desacelerar(); 
+        vacaloLaranja.desacelerar(); 
+        vacaloLaranja.desacelerar(); 
+        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desacelerar(); 
+        
+
+        vacaloLaranja.ligarMotor();
+        vacaloLaranja.acelerar(); 
+        vacaloLaranja.acelerar(); 
+        vacaloLaranja.acelerar();
+        vacaloLaranja.acelerar(); 
+        vacaloLaranja.acelerar(); 
+        
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desacelerar();
+        vacaloLaranja.desligarMotor();
+    }
+    
 }
-
-
-/*
- 
- baraoVermelho.setModelo("Fokker DR1");
-	     baraoVermelho.setIdentificador("Freiherr");
-	     baraoVermelho.setMotor(false);
-	     baraoVermelho.setAltura(0.0f);
-	     
-*/
-
-
-

@@ -1,26 +1,21 @@
 class Aviao {
-private String modelo;
 private String identificador;
+private Boolean motor;
 private float altura;
 private float velocidade;
 private Boolean emVoo;
-private Motor motorEsquerdo;
-private Motor motorDireito;
 
-Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
+Aviao(String novoM, String novoId){
     this.setModelo(novoM);
     this.setIdentificador(novoId);
+    this.setMotor(false);
     this.setAltura(0.0f);
     this.setVelocidade(0.0f);
-    this.setVoo(false);
-    this.setMotores(motor1,motor2);}
+    this.setVoo(false);}
 
-private void setMotores(Motor novoMotor1,Motor novoMotor2){
-    this.motorDireito=novoMotor1;
-    this.motorEsquerdo=novoMotor2;}
-public void imprimaOk(){
+public void imprimaok(){
     System.out.println("Ok");
-}    
+}
 public Boolean getVoo(){
     return this.emVoo;
 }
@@ -30,6 +25,7 @@ private void setVoo(boolean novoValor){
 public String getModelo(){
     return this.modelo;
 }
+
 public void atualizarStatusVoo(){
     if(this.emVoo){
         if(this.velocidade>=200){
@@ -44,21 +40,12 @@ public void atualizarStatusVoo(){
         else{
             System.out.println("Estou em solo");}
     }
-    
+
 }
 public void setModelo(String novoValor){
     this.modelo=novoValor;
 }
-public String getIdentificador(){
-    return this.identificador;
-}
-public void setIdentificador(String novoValor ){
-    this.identificador=novoValor;
-}
-
-public float getAltura(){
-    return this.altura;
-}
+@@ -32,5 +63,53 @@ public float getAltura(){
 public void setAltura(float novoValor){
     this.altura=novoValor;
 }
@@ -69,44 +56,21 @@ public void setVelocidade(float novoValor){
     this.velocidade=novoValor;
 }
 public void ligarMotor(){
-    if(motorDireito.getAtivo()){
-        if(motorEsquerdo.getAtivo()){
-        System.out.println("Todos os motores já estavam ligados"); }
-        else{motorEsquerdo.ligar();}}
-    else{
-        motorDireito.ligar();
-        if(!motorEsquerdo.getAtivo()){motorEsquerdo.ligar();}
-        }
-        System.out.println("Vruuuuuuuummmmmmmmmmm");}
-
-public void desligarMotor(){
-    if(!motorDireito.getAtivo()){
-        if(!motorEsquerdo.getAtivo()){
-        System.out.println("Todos os motores já estavam desligados"); }
-        else{motorEsquerdo.desligar();}}
-    else{
-        motorDireito.desligar();
-        if(motorEsquerdo.getAtivo()){motorEsquerdo.desligar();}
-        }
-        System.out.println("mmmmm.....");}
-
+    setMotor(true);
+    System.out.println("Vruuuuuuuummmmmmmmmmm");
+}
+public void desligaMotor(){
+    setMotor(false);
+    System.out.println("mmmmmmmmmmuuuuuuurrV");
+}
 public void imprimeEstadoMotor(){
-    if(motorEsquerdo.getAtivo()||motorDireito.getAtivo()){
+    if(this.getMotor()){
         System.out.println("O motor está ligado");
     }
     else{
         System.out.println("O motor está desligado");
     }
 }
-public boolean getEstadoMotor(){
-    if(motorEsquerdo.getAtivo()||motorDireito.getAtivo()){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 public void acelerar(){
  if(this.getMotor()){
     this.velocidade=this.velocidade+50;
@@ -134,4 +98,3 @@ public void desacelerar(){
        System.out.println("ERRO:MOTOR DESLIGADO");}
    }
 }
-
