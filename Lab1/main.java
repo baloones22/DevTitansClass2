@@ -1,36 +1,28 @@
 class Main {
 
     public static void main(String[] args){
-
-
-        Motor cavaloRed;
-        Motor cavaloLaranja;
-        cavaloLaranja= new Motor("orange dragon",(float) 50.0);
-        cavaloRed= new Motor("red dragon",(float) 50.0);
         Aviao vacaloLaranja;
-        vacaloLaranja= new Aviao("blue Dragon","frankstein",cavaloRed,cavaloLaranja);
-        vacaloLaranja.imprimaOk();
-        
-
+        vacaloLaranja= new Aviao("blue Dragon","frankstein");
+        vacaloLaranja.imprimaok();
         System.out.println("Model:"+vacaloLaranja.getModelo()+"\nID:"+vacaloLaranja.getIdentificador()+
                             "\nStatus:"+vacaloLaranja.getMotor()+"\nAltura:"+vacaloLaranja.getAltura());        ;
         vacaloLaranja.ligarMotor();        
         vacaloLaranja.imprimeEstadoMotor();
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligaMotor();
         vacaloLaranja.imprimeEstadoMotor();
         vacaloLaranja.ligarMotor();
         vacaloLaranja.acelerar();
         vacaloLaranja.acelerar(); 
-        vacaloLaranja.desligarMotor(); 
+        vacaloLaranja.desligaMotor(); 
         vacaloLaranja.acelerar();  
 
         vacaloLaranja.ligarMotor();
         vacaloLaranja.desacelerar(); 
         vacaloLaranja.desacelerar(); 
         vacaloLaranja.desacelerar(); 
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligaMotor();
         vacaloLaranja.desacelerar(); 
-        
+
 
         vacaloLaranja.ligarMotor();
         vacaloLaranja.acelerar(); 
@@ -38,14 +30,14 @@ class Main {
         vacaloLaranja.acelerar();
         vacaloLaranja.acelerar(); 
         vacaloLaranja.acelerar(); 
-        
+
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
         vacaloLaranja.desacelerar();
-        vacaloLaranja.desligarMotor();
+        vacaloLaranja.desligaMotor();
     }
-    
+
 }
