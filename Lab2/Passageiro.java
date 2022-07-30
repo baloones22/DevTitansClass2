@@ -23,8 +23,4 @@ class Passageiro{
         this.cpfString=cpf;}
     public String getCpfString(){
             return this.cpfString; }
-
-        
-Passageiro(){}
-
 }

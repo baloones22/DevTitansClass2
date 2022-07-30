@@ -6,6 +6,8 @@ private float velocidade;
 private Boolean emVoo;
 private Motor motorEsquerdo;
 private Motor motorDireito;
+private Passageiro passageiros [];
+
 
 Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setModelo(novoM);
@@ -13,7 +15,11 @@ Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setAltura(0.0f);
     this.setVelocidade(0.0f);
     this.setVoo(false);
-    this.setMotores(motor1,motor2);}
+    this.setMotores(motor1,motor2);
+    ArrayList<Passageiro> passageiros = new ArrayList<Passageiro>(); }
+
+private boolean addPassageiro(Passageiro obj){
+    passageiros.add(obj);}
 
 private void setMotores(Motor novoMotor1,Motor novoMotor2){
     this.motorDireito=novoMotor1;
