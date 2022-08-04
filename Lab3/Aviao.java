@@ -8,12 +8,12 @@ class Aviao{
 	private boolean emVoo;
 	private float altura;
 	private float velocidade;
-	private Motor motorEsquerdo;
-	private Motor motorDireito;
+	private Motorizavel motorEsquerdo;
+	private Motorizavel motorDireito;
 	private ArrayList<Passageiro> listaPassageiros;
 	
 	
-	Aviao(String novoM, String novoId,Motor motorE, Motor motorD){
+	Aviao(String novoM, String novoId,Motorizavel motorE, Motorizavel motorD){
 		this.setModelo(novoM);
 		this.setIdentificador(novoId);
 		this.setAltura(0.0f);
@@ -41,19 +41,19 @@ class Aviao{
 		this.identificador = novoValor;
 	}
 	
-	private Motor getMotorEsquerdo(){
+	public Motorizavel getMotorEsquerdo(){
 		return this.motorEsquerdo;
 	}
 	
-	private void setMotorEsquerdo(Motor novoValor){
+	public void setMotorEsquerdo(Motorizavel novoValor){
 		this.motorEsquerdo = novoValor;
 	}
 	
-	private Motor getMotorDireito(){
+	public Motorizavel getMotorDireito(){
 		return this.motorDireito;
 	}
 	
-	private void setMotorDireito(Motor novoValor){
+	public void setMotorDireito(Motorizavel novoValor){
 		this.motorDireito = novoValor;
 	}
 

@@ -1,4 +1,4 @@
-class Motor{
+public class Motor implements Motorizavel{
 
 	private String modelo;
 	private boolean ativo;
@@ -28,7 +28,7 @@ class Motor{
 		this.ativo = novoValor;
 	}
 	
-	public float getPotencia(){
+	public Float getPotencia(){
 		return this.potencia;
 	}
 	

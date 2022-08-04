@@ -10,7 +10,7 @@ class MotorTurbinado extends Motor{
 	}
 	
 	
-	public float getPotencia(){
+	public Float getPotencia(){
 		return (super.getPotencia() * 1.2f);
 	}
 	
