@@ -40,10 +40,16 @@ public boolean getAtivo(){
     return this.acordada;
 }
 public void ligar(){
+    if(!this.acordada){
     this.setAcordada(true);
+    if(this.nome=="Smaug"){System.out.println("RUAARRRR QUEM TA MEXENDO NO MEU DINHEIRO VO QUEIMAR GERAL");}
+    else{System.out.println("Levantou da caverna o Corno "+this.nome);}
+    }
 }
 public void desligar(){
+    if(this.acordada){
     this.setAcordada(false);
+    System.out.println("Foi dormir o Monstro "+this.nome);}
 }
 public float getPotencia(){
     if(acordada){

@@ -28,7 +28,7 @@ public class Motor implements Motorizavel{
 		this.ativo = novoValor;
 	}
 	
-	public Float getPotencia(){
+	public float getPotencia(){
 		return this.potencia;
 	}
 	

@@ -5,14 +5,17 @@ class Main{
 	     Aviao baraoVermelho;
 	     Motor motor1,motor2;
 	     Passageiro pass01,pass02,pass03;
-	     
+	     AguiaGigante aguia1,aguia2;
 	    pass01 = new Passageiro("Fulano","de XPTO","1234");
 	    pass02 = new Passageiro("Beltrana","de XPTO","3456");
-	    pass03 = new Passageiro("Cicraninho","de XPTO","6789"); 
+	    pass03 = new Passageiro("Cicraninho","de XPTO","6789");
+		aguia1 = new AguiaGigante("Smaug", 1000, 200);
+		aguia2 = new AguiaGigante("Glaurung", 1000, 200);
 	          
 	     motor1 = new Motor("Siemens-Halske", 50f);
-	     motor2 = new Motor("Siemens-Halske", 50f);  
-	     baraoVermelho = new Aviao("Fokker DR1","Freiherr",motor1,motor2);     
+	     motor2 = new Motor("Siemens-Halske", 50f);
+
+	     baraoVermelho = new Aviao("Fokker DR1","Freiherr",aguia1,aguia2);     
 	     baraoVermelho.imprimaOk();
           
 	     System.out.println("Modelo: "+baraoVermelho.getModelo()+
