@@ -3,10 +3,8 @@ class Main {
     public static void main(String[] args){
 
 
-        Motor cavaloRed;
-        Motor cavaloLaranja;
-        cavaloLaranja= new Motor("orange dragon",(float) 50.0);
-        cavaloRed= new Motor("red dragon",(float) 50.0);
+        MotorTurbinado  cavaloRed= new MotorTurbinado("red dragon",(float) 50.0f);
+        MotorTurbinado cavaloLaranja = new MotorTurbinado("orange dragon",(float) 50.0f);
         Aviao vacaloLaranja;
         vacaloLaranja= new Aviao("blue Dragon","frankstein",cavaloRed,cavaloLaranja);
         vacaloLaranja.imprimaOk();
