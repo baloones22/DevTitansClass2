@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import javax.management.monitor.Monitor;
+
 class Aviao {
 private String modelo;
 private String identificador;
@@ -6,8 +9,7 @@ private float velocidade;
 private Boolean emVoo;
 private Motor motorEsquerdo;
 private Motor motorDireito;
-private Passageiro passageiros [];
-
+private ArrayList<Passageiro> ListaPassageiros;
 
 Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setModelo(novoM);
@@ -16,10 +18,7 @@ Aviao(String novoM, String novoId, Motor motor1, Motor motor2){
     this.setVelocidade(0.0f);
     this.setVoo(false);
     this.setMotores(motor1,motor2);
-    ArrayList<Passageiro> passageiros = new ArrayList<Passageiro>(); }
-
-private boolean addPassageiro(Passageiro obj){
-    passageiros.add(obj);}
+    ListaPassageiros = new ArrayList<Passageiro>(); }
 
 private void setMotores(Motor novoMotor1,Motor novoMotor2){
     this.motorDireito=novoMotor1;
@@ -86,9 +85,8 @@ public void desligarMotor(Motor motorzinho){
     if(motorzinho.getAtivo()){
     motorzinho.desligar();
     System.out.println("mmuurrV no motor :"+motorzinho.getModelo());}
-else{
-    System.out.println("Motor já estava desligado");}
-    }
+    else{
+    System.out.println("Motor já estava desligado");}}
 
 
 public void imprimeEstadoMotor(){
@@ -113,7 +111,7 @@ public void acelerar(){
     this.velocidade=this.velocidade+50;
     if(motorDireito.getAtivo()){
         this.velocidade=this.velocidade+50;}}
-else{
+    else{
     if(motorDireito.getAtivo()){
         this.velocidade=this.velocidade+50;}
     else{
@@ -137,5 +135,44 @@ public void desacelerar(){
         System.out.println(result);
         this.atualizarStatusVoo();
      }
+
+
+
+public Boolean adicionarPassageiro(Passageiro obj){
+        if(!getVoo()){
+            ListaPassageiros.add(obj);
+            return true;
+        }else{
+            System.out.println("Protocolos de segurança não permitem embarques com a aeronave em movimento");
+            return false;
+        }
+    }
+public Passageiro buscaPassageiroPorCpf(String cpf){
+        for(Passageiro p : ListaPassageiros){
+            if(p.getCpf()==cpf){
+                return p;
+            }
+        }
+        return null;
+    }
+    public void imprimirListaDePassageiro(){
+        for(Passageiro p: ListaPassageiros){
+            System.out.println(p.getPrimeiroNome()+" "+p.getUltimoNome()+" "+p.getCpf());
+        }
+    }
+    public void desembarcarPassageiros(){
+        if(!getVoo()){
+            for(Passageiro p: ListaPassageiros){
+                System.out.println(p.getPrimeiroNome()+" "+p.getUltimoNome()+" desembarcou da aeronave");
+            }
+            ListaPassageiros.removeAll(ListaPassageiros);
+        }else{
+            System.out.println("Protocolos de segurança não permitem desembarques com a aeronave em movimento");
+        }
+    }
+    public String  toString(){
+        return "Modelo: "+getModelo();
+    }
+
 }
 

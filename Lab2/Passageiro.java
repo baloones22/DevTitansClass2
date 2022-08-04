@@ -21,6 +21,6 @@ class Passageiro{
                 return this.ultimoNome; }
     private void setCpf(String cpf){
         this.cpfString=cpf;}
-    public String getCpfString(){
+    public String getCpf(){
             return this.cpfString; }
 }
